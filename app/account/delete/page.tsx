@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
 
 import Link from "next/link";
 import { useState } from "react";
@@ -9,9 +9,11 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Pill, AlertTriangle, ArrowLeft } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 export default function DeleteAccountPage() {
   const [confirmText, setConfirmText] = useState("");
+  const router = useRouter();
   const [confirmations, setConfirmations] = useState({
     understand: false,
     dataLoss: false,
@@ -23,6 +25,20 @@ export default function DeleteAccountPage() {
     confirmations.understand &&
     confirmations.dataLoss &&
     confirmations.noRecovery;
+
+  useEffect(() => {
+    const getJWT = async () => {
+      const res = await fetch("/api/user", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+      });
+      console.log(res);
+      if (!res.ok) {
+        router.push("/login");
+      }
+    };
+    getJWT();
+  }, [router]);
 
   const handleDelete = async () => {
     const res = await fetch("/api/account", {

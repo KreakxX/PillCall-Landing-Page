@@ -45,6 +45,9 @@ export function Header() {
           <Button asChild>
             <Link href="/login">Log In</Link>
           </Button>
+          <Button asChild>
+            <Link href="/login">Delete Account</Link>
+          </Button>
         </div>
 
         <Button
@@ -88,6 +91,11 @@ export function Header() {
             <div className="flex flex-col gap-2 pt-2">
               <Button asChild>
                 <Link href="/login">Log In</Link>
+              </Button>
+            </div>
+            <div className="flex flex-col gap-2 pt-2">
+              <Button asChild>
+                <Link href="/login">Delete Account</Link>
               </Button>
             </div>
           </nav>

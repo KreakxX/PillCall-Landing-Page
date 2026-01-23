@@ -23,16 +23,16 @@ export async function DELETE(req: NextRequest){
     });
 
       const res = NextResponse.json({ message: "Logged in" });
-      return res;
+  
 
-//     const subscription_response = await fetch(`https://api.revenuecat.com/v1/subscribers/${userId}/cancel`, {
-//   method: "POST",
-//   headers: {
-//     "Authorization": `Bearer ${process.env.REVENUECAT_API_KEY}`,
-//     "Content-Type": "application/json",
-//   },
-// });
-
+    const subscription_response = await fetch(`https://api.revenuecat.com/v1/subscribers/${payload.userId}/cancel`, {
+  method: "POST",
+  headers: {
+    "Authorization": `Bearer ${process.env.REVENUECAT_API_KEY}`,
+    "Content-Type": "application/json",
+  },
+});
+    return res;
   }catch(error){
   return NextResponse.json({ error: "Internal Server Error" }, { status: 500 });
   }
