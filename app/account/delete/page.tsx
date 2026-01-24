@@ -29,10 +29,10 @@ export default function DeleteAccountPage() {
   useEffect(() => {
     const getJWT = async () => {
       const res = await fetch("/api/user", {
-        method: "POST",
+        method: "GET",
+        credentials: "include",
         headers: { "Content-Type": "application/json" },
       });
-      console.log(res);
       if (!res.ok) {
         router.push("/login");
       }

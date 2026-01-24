@@ -8,7 +8,7 @@ export async function GET(req: NextRequest) {
 
     }
     const res = NextResponse.json({ message: "Token", jwt: jwt });
-
+    return res;
   } catch (error) {
     return NextResponse.json({ error: "Internal Server Error" }, { status: 500 });
   }

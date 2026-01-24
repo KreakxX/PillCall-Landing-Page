@@ -33,12 +33,6 @@ export function Header() {
           >
             How It Works
           </Link>
-          <Link
-            href="#pricing"
-            className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
-          >
-            Pricing
-          </Link>
         </nav>
 
         <div className="hidden items-center gap-3 md:flex">
