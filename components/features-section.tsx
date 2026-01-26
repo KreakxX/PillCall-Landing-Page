@@ -1,49 +1,48 @@
-import { Bell, Calendar, Users, Shield, Smartphone, BarChart3 } from "lucide-react"
+import {
+  Bell,
+  Calendar,
+  Users,
+  Shield,
+  Smartphone,
+  BarChart3,
+  PhoneCall,
+} from "lucide-react";
 
 const features = [
   {
-    icon: Bell,
-    title: "Smart Reminders",
-    description: "Get notified at the perfect time based on your routine. Never forget a dose again.",
+    icon: PhoneCall,
+    title: "AI Reminder Calls",
+    description:
+      "Our AI calls you exactly when it’s time to take your medication | hands-free and reliable.",
   },
   {
     icon: Calendar,
     title: "Flexible Scheduling",
-    description: "Set up complex medication schedules with ease. Daily, weekly, or custom intervals.",
+    description:
+      "Set up complex medication schedules with ease. Daily, weekly, or custom intervals.",
   },
   {
     icon: Users,
     title: "Family Sharing",
-    description: "Keep caregivers and family informed. Share medication status with trusted contacts.",
+    description:
+      "Keep caregivers and family informed. Share medication status with trusted contacts.",
   },
-  {
-    icon: Shield,
-    title: "HIPAA Compliant",
-    description: "Your health data is encrypted and secure. We take privacy seriously.",
-  },
-  {
-    icon: Smartphone,
-    title: "Works Offline",
-    description: "Access your medication schedule anytime, even without an internet connection.",
-  },
-  {
-    icon: BarChart3,
-    title: "Progress Tracking",
-    description: "View your adherence history and share reports with your healthcare provider.",
-  },
-]
+];
 
 export function FeaturesSection() {
   return (
     <section id="features" className="bg-muted/30 py-20 sm:py-32">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-wider text-primary">Features</p>
+          <p className="text-sm font-semibold uppercase tracking-wider text-primary">
+            Features
+          </p>
           <h2 className="mt-3 text-balance text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
             Everything you need to manage your medications
           </h2>
           <p className="mt-4 text-pretty text-lg text-muted-foreground">
-            PillCall combines powerful features with a simple interface to make medication management effortless.
+            PillCall combines powerful features with a simple interface to make
+            medication management effortless.
           </p>
         </div>
 
@@ -56,12 +55,16 @@ export function FeaturesSection() {
               <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 transition-colors group-hover:bg-primary/20">
                 <feature.icon className="h-6 w-6 text-primary" />
               </div>
-              <h3 className="text-lg font-semibold text-foreground">{feature.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{feature.description}</p>
+              <h3 className="text-lg font-semibold text-foreground">
+                {feature.title}
+              </h3>
+              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                {feature.description}
+              </p>
             </div>
           ))}
         </div>
       </div>
     </section>
-  )
+  );
 }
