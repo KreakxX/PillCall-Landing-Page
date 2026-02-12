@@ -43,6 +43,9 @@ export function HeroSection() {
               <Button size="lg" asChild>
                 <Link href="#how-it-works">See How It Works</Link>
               </Button>
+              <Button size="lg" asChild>
+                <Link href="#how-it-works">Download now</Link>
+              </Button>
             </div>
           </div>
 

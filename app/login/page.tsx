@@ -7,7 +7,6 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Pill, Eye, EyeOff } from "lucide-react";
 import { useRouter } from "next/navigation";
-
 export default function LoginPage() {
   const router = useRouter();
   const [showPassword, setShowPassword] = useState(false);
@@ -22,7 +21,7 @@ export default function LoginPage() {
     });
 
     if (res.ok) {
-      router.push("/account/delete");
+      router.push("/account/dashboard");
     }
   };
 
@@ -33,7 +32,10 @@ export default function LoginPage() {
           <div className="mb-8 flex flex-col items-center text-center">
             <Link href="/" className="mb-6 flex items-center gap-2">
               <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary">
-                <Pill className="h-7 w-7 text-primary-foreground" />
+                <img
+                  src={"PillCallIcon.png"}
+                  className="h-10 w-10 text-primary-foreground"
+                />
               </div>
               <h1>Login to view or delete your Account</h1>
             </Link>
@@ -50,7 +52,7 @@ export default function LoginPage() {
                   id="email"
                   type="email"
                   placeholder="you@example.com"
-                  className="h-11"
+                  className="h-11 bg-white"
                 />
               </div>
 
@@ -66,7 +68,7 @@ export default function LoginPage() {
                     }}
                     type={showPassword ? "text" : "password"}
                     placeholder="Enter your password"
-                    className="h-11 pr-10"
+                    className="h-11 pr-10 bg-white"
                   />
                   <button
                     type="button"

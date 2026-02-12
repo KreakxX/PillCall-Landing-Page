@@ -13,7 +13,6 @@ export default function LandingPage() {
         <FeaturesSection />
         <AppShowcase />
       </main>
-      <Footer />
     </div>
   );
 }
