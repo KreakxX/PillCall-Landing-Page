@@ -7,12 +7,14 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Pill, Eye, EyeOff } from "lucide-react";
 import { useRouter } from "next/navigation";
+import { useUser } from "@/context/LandingContext";
+import { User } from "@/interfaces/user";
 export default function LoginPage() {
   const router = useRouter();
   const [showPassword, setShowPassword] = useState(false);
   const [password, setPassword] = useState<string>("");
   const [email, setEmail] = useState<string>("");
-
+  const { setUser } = useUser();
   const login = async () => {
     const res = await fetch("/api/login", {
       method: "POST",
@@ -21,6 +23,17 @@ export default function LoginPage() {
     });
 
     if (res.ok) {
+      const user: User = await res.json();
+      console.log("Login successful, user data:", user);
+      setUser(user);
+
+      // Wait longer to ensure localStorage is saved
+      await new Promise((resolve) => setTimeout(resolve, 500));
+
+      // Verify it's in localStorage
+      const stored = localStorage.getItem("app_user");
+      console.log("Before navigation - localStorage contains:", stored);
+
       router.push("/account/dashboard");
     }
   };
