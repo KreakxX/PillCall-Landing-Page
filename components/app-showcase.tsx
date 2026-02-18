@@ -1,3 +1,6 @@
+"use client";
+import Script from "next/script";
+
 export function AppShowcase() {
   return (
     <section id="how-it-works" className="bg-background py-20 sm:py-32">
@@ -50,7 +53,7 @@ export function AppShowcase() {
 
                 <div className="mb-6 w-full overflow-hidden rounded-xl border border-border bg-muted shadow-lg">
                   <div className="flex a items-center justify-center p-6">
-                    <img src={item.img} className="w-full h-full"></img>
+                    <img src={item.img} className="w-full h-full" />
                   </div>
                 </div>
 

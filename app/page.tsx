@@ -3,6 +3,7 @@ import { HeroSection } from "@/components/hero-section";
 import { FeaturesSection } from "@/components/features-section";
 import { AppShowcase } from "@/components/app-showcase";
 import { Footer } from "@/components/footer";
+import DataPolicy from "@/components/datapolicy";
 
 export default function LandingPage() {
   return (
@@ -12,6 +13,7 @@ export default function LandingPage() {
         <HeroSection />
         <FeaturesSection />
         <AppShowcase />
+        <DataPolicy />
       </main>
     </div>
   );
