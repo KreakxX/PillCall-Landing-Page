@@ -91,20 +91,17 @@ export default function DataPolicy() {
         </div>
       </div>
 
-      {/* Policy Content */}
       <div className="max-w-4xl mx-auto px-6 py-12 md:py-16">
         <div
           className="rounded-2xl border border-[--border] bg-[--card] p-6 md:p-10 shadow-sm"
           style={{ color: "var(--card-foreground)" }}
         >
-          {/* Termly embed */}
           <div
             name="termly-embed"
             data-id="c09b3f83-1041-499a-acf1-09e2a147a0e3"
-          />
+          ></div>
         </div>
 
-        {/* Footer note */}
         <p className="mt-8 text-center text-sm text-[--muted-foreground]">
           Questions about our data practices?{" "}
           <a

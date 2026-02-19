@@ -27,15 +27,18 @@ export default function LoginPage() {
       console.log("Login successful, user data:", user);
       setUser(user);
 
-      // Wait longer to ensure localStorage is saved
       await new Promise((resolve) => setTimeout(resolve, 500));
 
-      // Verify it's in localStorage
       const stored = localStorage.getItem("app_user");
       console.log("Before navigation - localStorage contains:", stored);
 
       router.push("/account/dashboard");
     }
+  };
+
+  const handleGoogleLogin = () => {
+    window.location.href =
+      "https://pillcall.duckdns.org:8050/pillcall/auth/google/register";
   };
 
   return (
@@ -105,6 +108,15 @@ export default function LoginPage() {
                 className="mt-2 h-11 w-full"
               >
                 Sign In
+              </Button>
+              <Button
+                onClick={() => {
+                  handleGoogleLogin();
+                }}
+                type="submit"
+                className="mt-2 h-11 w-full"
+              >
+                Sign In with Google
               </Button>
             </div>
           </div>
