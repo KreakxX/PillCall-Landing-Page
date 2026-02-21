@@ -97,9 +97,11 @@ export default function DataPolicy() {
           style={{ color: "var(--card-foreground)" }}
         >
           <div
-            name="termly-embed"
+            {...({
+              name: "termly-embed",
+            } as any)}
             data-id="c09b3f83-1041-499a-acf1-09e2a147a0e3"
-          ></div>
+          />
         </div>
 
         <p className="mt-8 text-center text-sm text-[--muted-foreground]">
