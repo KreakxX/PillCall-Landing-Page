@@ -38,7 +38,7 @@ export default function LoginPage() {
 
   const handleGoogleLogin = () => {
     window.location.href =
-      "https://pillcall.duckdns.org:8050/pillcall/auth/google/register";
+      "https://pillcall.duckdns.org:8050/pillcall/auth/google/register?source=web";
   };
 
   return (
