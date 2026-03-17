@@ -13,7 +13,7 @@ export async function DELETE(req: NextRequest){
     const payloadJson = atob(payloadbase64);
     const payload = JSON.parse(payloadJson);
     
-     const response = await fetch("http://localhost:8040/user/delete/user/by/id", {
+     const response = await fetch("https://pillcall.duckdns.org:8050/pillcall/user/delete/user/by/id", {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",

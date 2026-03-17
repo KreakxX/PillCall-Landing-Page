@@ -13,7 +13,7 @@ export async function POST(req: NextRequest) {
   try {
     const body = await req.json(); 
     const { email, password } = body;
-    const response = await fetch("http://localhost:8040/auth/login", {
+    const response = await fetch("https://pillcall.duckdns.org:8050/pillcall/auth/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -40,7 +40,7 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "Failed to decode JWT" }, { status: 500 });
     }
 
-    const userResponse = await fetch(`http://localhost:8040/user/user/by/id?userId=${userId}`, {
+    const userResponse = await fetch(`https://pillcall.duckdns.org:8050/pillcall/user/user/by/id?userId=${userId}`, {
       method: "GET",
       headers: {
         "Authorization": `Bearer ${jwt}`,

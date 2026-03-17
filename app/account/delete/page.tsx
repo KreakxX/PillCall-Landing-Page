@@ -65,7 +65,7 @@ export default function DeleteAccountPage() {
       <main className="flex flex-1 items-center justify-center px-4 py-12">
         <div className="w-full max-w-lg">
           <Link
-            href="/"
+            href="/account/dashboard"
             className="mb-6 inline-flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
           >
             <ArrowLeft className="h-4 w-4" />
