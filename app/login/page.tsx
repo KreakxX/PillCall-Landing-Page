@@ -53,28 +53,30 @@ export default function LoginPage() {
                   className="h-10 w-10 text-primary-foreground"
                 />
               </div>
-              <h1>Login to view or delete your Account</h1>
+              <h1>
+                Bei deinem Konto anmelden, um es anzusehen oder zu löschen
+              </h1>
             </Link>
           </div>
 
           <div className="rounded-2xl border border-border bg-background  p-8 shadow-sm">
             <div className="gap-3 flex flex-col">
               <div className="flex flex-col gap-2">
-                <Label htmlFor="email">Email</Label>
+                <Label htmlFor="email">E-Mail</Label>
                 <Input
                   onChange={(e) => {
                     setEmail(e.target.value);
                   }}
                   id="email"
                   type="email"
-                  placeholder="you@example.com"
+                  placeholder="du@beispiel.com"
                   className="h-11 bg-white"
                 />
               </div>
 
               <div className="flex flex-col gap-2">
                 <div className="flex items-center justify-between">
-                  <Label htmlFor="password">Password</Label>
+                  <Label htmlFor="password">Passwort</Label>
                 </div>
                 <div className="relative">
                   <Input
@@ -83,7 +85,7 @@ export default function LoginPage() {
                       setPassword(e.target.value);
                     }}
                     type={showPassword ? "text" : "password"}
-                    placeholder="Enter your password"
+                    placeholder="Gib dein Passwort ein"
                     className="h-11 pr-10 bg-white"
                   />
                   <button
@@ -107,7 +109,7 @@ export default function LoginPage() {
                 type="submit"
                 className="mt-2 h-11 w-full"
               >
-                Sign In
+                Anmelden
               </Button>
               <Button
                 onClick={() => {
@@ -116,20 +118,21 @@ export default function LoginPage() {
                 type="submit"
                 className="mt-2 h-11 w-full"
               >
-                Sign In with Google
+                Mit Google anmelden
               </Button>
             </div>
           </div>
 
           <p className="mt-6 text-center text-xs text-muted-foreground">
-            By continuing, you agree to our{" "}
+            Durch die Fortsetzung stimmst du unseren{" "}
             <Link href="#" className="text-primary hover:underline">
-              Terms of Service
+              Nutzungsbedingungen
             </Link>{" "}
-            and{" "}
+            und{" "}
             <Link href="#" className="text-primary hover:underline">
-              Privacy Policy
-            </Link>
+              Datenschutzrichtlinie
+            </Link>{" "}
+            zu.
           </p>
         </div>
       </div>

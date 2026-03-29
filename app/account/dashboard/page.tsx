@@ -23,7 +23,9 @@ export default function Dashboard() {
       <div className="min-h-screen bg-white flex items-center justify-center">
         <div className="flex flex-col items-center gap-3">
           <div className="h-8 w-8 animate-spin rounded-full border-4 border-blue-500 border-t-transparent" />
-          <p className="text-gray-500 text-sm">Loading your dashboard...</p>
+          <p className="text-gray-500 text-sm">
+            Dein Dashboard wird geladen...
+          </p>
         </div>
       </div>
     );

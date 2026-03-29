@@ -28,22 +28,22 @@ export function Header() {
             href="#features"
             className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
           >
-            Features
+            Funktionen
           </Link>
           <Link
             href="#how-it-works"
             className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
           >
-            How It Works
+            Wie es funktioniert
           </Link>
         </nav>
 
         <div className="hidden items-center gap-3 md:flex">
           <Button asChild>
-            <Link href="/login">Log In</Link>
+            <Link href="/login">Anmelden</Link>
           </Button>
           <Button asChild>
-            <Link href="/login">Delete Account</Link>
+            <Link href="/login">Konto löschen</Link>
           </Button>
         </div>
 
@@ -69,30 +69,30 @@ export function Header() {
               className="text-sm font-medium text-muted-foreground"
               onClick={() => setMobileMenuOpen(false)}
             >
-              Features
+              Funktionen
             </Link>
             <Link
               href="#how-it-works"
               className="text-sm font-medium text-muted-foreground"
               onClick={() => setMobileMenuOpen(false)}
             >
-              How It Works
+              Wie es funktioniert
             </Link>
             <Link
               href="#pricing"
               className="text-sm font-medium text-muted-foreground"
               onClick={() => setMobileMenuOpen(false)}
             >
-              Pricing
+              Preise
             </Link>
             <div className="flex flex-col gap-2 pt-2">
               <Button asChild>
-                <Link href="/login">Log In</Link>
+                <Link href="/login">Anmelden</Link>
               </Button>
             </div>
             <div className="flex flex-col gap-2 pt-2">
               <Button asChild>
-                <Link href="/login">Delete Account</Link>
+                <Link href="/login">Konto löschen</Link>
               </Button>
             </div>
           </nav>

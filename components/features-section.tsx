@@ -11,21 +11,21 @@ import {
 const features = [
   {
     icon: PhoneCall,
-    title: "AI Reminder Calls",
+    title: "KI-Erinnerungsanrufe",
     description:
-      "Our AI calls you exactly when it’s time to take your medication | hands-free and reliable.",
+      "Unsere KI ruft dich genau an, wenn es Zeit ist, deine Medikamente einzunehmen | hands-free und zuverlässig.",
   },
   {
     icon: Calendar,
-    title: "Flexible Scheduling",
+    title: "Flexible Zeitplanung",
     description:
-      "Set up complex medication schedules with ease. Daily, weekly, or custom intervals.",
+      "Richte komplexe Medikamentenpläne mit Leichtigkeit ein. Täglich, wöchentlich oder benutzerdefinierte Intervalle.",
   },
   {
     icon: Users,
-    title: "Family Sharing",
+    title: "Familienfreigabe",
     description:
-      "Keep caregivers and family informed. Share medication status with trusted contacts.",
+      "Halte Betreuer und Familie informiert. Teile den Medikamentenstatus mit vertrauten Kontakten.",
   },
 ];
 
@@ -35,14 +35,14 @@ export function FeaturesSection() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
           <p className="text-sm font-semibold uppercase tracking-wider text-primary">
-            Features
+            Funktionen
           </p>
           <h2 className="mt-3 text-balance text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-            Everything you need to manage your medications
+            Alles, was du brauchst, um deine Medikamente zu verwalten
           </h2>
           <p className="mt-4 text-pretty text-lg text-muted-foreground">
-            PillCall combines powerful features with a simple interface to make
-            medication management effortless.
+            PillCall kombiniert leistungsstarke Funktionen mit einer einfachen
+            Oberfläche, um die Medikamentenverwaltung mühelos zu machen.
           </p>
         </div>
 

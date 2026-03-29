@@ -9,9 +9,9 @@ const _geist = Geist({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "PillCall - Never Miss Your Medication",
+  title: "PillCall - Vergiss nie deine Medikamente",
   description:
-    "Smart medication reminders that keep you on track. PillCall helps you manage prescriptions, set reminders, and stay healthy.",
+    "Intelligente Medikamentenerinnerungen, die dich auf dem Laufenden halten. PillCall hilft dir, Rezepte zu verwalten, Erinnerungen einzustellen und gesund zu bleiben.",
   generator: "v0.app",
   icons: {
     icon: [

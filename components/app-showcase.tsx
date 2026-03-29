@@ -7,14 +7,14 @@ export function AppShowcase() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
           <p className="text-sm font-semibold uppercase tracking-wider text-primary">
-            How It Works
+            Wie es funktioniert
           </p>
           <h2 className="mt-3 text-balance text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-            Simple setup, powerful results
+            Einfache Einrichtung, mächtige Ergebnisse
           </h2>
           <p className="mt-4 text-pretty text-lg text-muted-foreground">
-            Get started in minutes. Add your medications, set your schedule, and
-            let PillCall do the rest.
+            Starte in Minuten. Füge deine Medikamente hinzu, stelle deinen
+            Zeitplan ein und lass PillCall den Rest erledigen.
           </p>
         </div>
 
@@ -22,24 +22,24 @@ export function AppShowcase() {
           {[
             {
               step: "01",
-              title: "Add Medications",
+              title: "Medikamente hinzufügen",
               description:
-                "Scan or manually enter your prescriptions. We'll store all the details.",
-              img: "/AddMedication.png",
+                "Scanne oder gib deine Rezepte manuell ein. Wir speichern alle Details.",
+              img: "/AddPAge-portrait.png",
             },
             {
               step: "02",
-              title: "Set Your Schedule",
+              title: "Stelle deinen Zeitplan ein",
               description:
-                "Choose when and how often you need to take each medication.",
-              img: "/Reminder.png",
+                "Wähle aus, wann und wie oft du jedes Medikament einnehmen musst.",
+              img: "/ReminderAdd-portrait.png",
             },
             {
               step: "03",
-              title: "Get Reminders",
+              title: "Erhalte Erinnerungen",
               description:
-                "Receive timely notifications and track your progress over time.",
-              img: "/Calendar.png",
+                "Erhalte zeitnahe Benachrichtigungen und verfolge deinen Fortschritt im Laufe der Zeit.",
+              img: "/Calendar-portrait.png",
             },
           ].map((item, index) => (
             <div key={item.step} className="relative">
