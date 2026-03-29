@@ -4,13 +4,16 @@ import { FeaturesSection } from "@/components/features-section";
 import { AppShowcase } from "@/components/app-showcase";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
+import jwt from "jsonwebtoken";
 export default async function LandingPage() {
   const cookieStore = await cookies();
   const token = cookieStore.get("token");
-  const isLoggedIn = !!token;
+  if (token) {
+    const verified = jwt.verify(token.value, process.env.JWT_SECRET!);
 
-  if (isLoggedIn) {
-    redirect("/account/dashboard");
+    if (verified) {
+      redirect("/account/dashboard");
+    }
   }
 
   return (
