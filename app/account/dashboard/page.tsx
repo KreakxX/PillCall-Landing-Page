@@ -18,6 +18,13 @@ export default function Dashboard() {
   const { user, loading } = useUser();
   const router = useRouter();
 
+  const signout = async () => {
+    await fetch("/api/logout", {
+      method: "POST",
+    });
+    router.replace("/login");
+  };
+
   if (loading) {
     return (
       <div className="min-h-screen bg-white flex items-center justify-center">
@@ -51,7 +58,12 @@ export default function Dashboard() {
               <p className="text-sm text-gray-500">{user.email}</p>
             </div>
           </div>
-          <button className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-gray-700 bg-gray-50 hover:bg-gray-100 rounded-lg transition-colors">
+          <button
+            onClick={() => {
+              signout();
+            }}
+            className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-gray-700 bg-gray-50 hover:bg-gray-100 rounded-lg transition-colors"
+          >
             <LogOut className="h-4 w-4" />
             Sign Out
           </button>
