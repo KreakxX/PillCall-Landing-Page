@@ -69,7 +69,7 @@ export default function DeleteAccountPage() {
             className="mb-6 inline-flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
           >
             <ArrowLeft className="h-4 w-4" />
-            Back to Dashboard
+            Zurück zum Dashboard
           </Link>
 
           <div className="rounded-2xl border border-destructive/30 bg-background p-8 shadow-sm">
@@ -79,34 +79,35 @@ export default function DeleteAccountPage() {
               </div>
               <div>
                 <h1 className="text-xl font-bold text-foreground">
-                  Delete Account
+                  Konto löschen
                 </h1>
                 <p className="mt-1 text-sm text-muted-foreground">
-                  This action is permanent and cannot be undone.
+                  Diese Aktion ist dauerhaft und kann nicht rückgängig gemacht
+                  werden.
                 </p>
               </div>
             </div>
 
             <div className="mb-6 rounded-lg bg-destructive/5 p-4">
               <h2 className="mb-2 text-sm font-semibold text-foreground">
-                What happens when you delete your account:
+                Was passiert, wenn du dein Konto löschst:
               </h2>
               <ul className="flex flex-col gap-2 text-sm text-muted-foreground">
                 <li className="flex items-start gap-2">
                   <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-destructive" />
-                  All your medication data will be permanently deleted
+                  Alle deine Medikationsdaten werden dauerhaft gelöscht
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-destructive" />
-                  Your reminder history and reports will be lost
+                  Deine Erinnerungsverlauf und Berichte gehen verloren
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-destructive" />
-                  Family sharing connections will be removed
+                  Familienfreigabe-Verbindungen werden entfernt
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-destructive" />
-                  Any active subscription will be cancelled
+                  Jegliches aktives Abonnement wird gekündigt
                 </li>
               </ul>
             </div>
@@ -127,7 +128,7 @@ export default function DeleteAccountPage() {
                   htmlFor="understand"
                   className="text-sm leading-relaxed text-foreground"
                 >
-                  I understand that my account will be permanently deleted
+                  Ich verstehe, dass mein Konto dauerhaft gelöscht wird
                 </Label>
               </div>
 
@@ -146,8 +147,8 @@ export default function DeleteAccountPage() {
                   htmlFor="dataLoss"
                   className="text-sm leading-relaxed text-foreground"
                 >
-                  I understand that all my data will be lost and cannot be
-                  recovered
+                  Ich verstehe, dass alle meine Daten verloren gehen und nicht
+                  wiederhergestellt werden können
                 </Label>
               </div>
 
@@ -166,25 +167,25 @@ export default function DeleteAccountPage() {
                   htmlFor="noRecovery"
                   className="text-sm leading-relaxed text-foreground"
                 >
-                  I want to proceed with deleting my account
+                  Ich möchte mit dem Löschen meines Kontos fortfahren
                 </Label>
               </div>
             </div>
 
             <div className="flex flex-col gap-2">
               <Label htmlFor="confirm" className="text-sm text-foreground">
-                Type{" "}
+                Gib{" "}
                 <span className="font-mono font-semibold text-destructive">
                   DELETE
                 </span>{" "}
-                to confirm
+                ein, um zu bestätigen
               </Label>
               <Input
                 id="confirm"
                 type="text"
                 value={confirmText}
                 onChange={(e) => setConfirmText(e.target.value)}
-                placeholder="Type DELETE to confirm"
+                placeholder="Gib DELETE ein, um zu bestätigen"
                 className="h-11 font-mono"
               />
             </div>
@@ -198,7 +199,7 @@ export default function DeleteAccountPage() {
                 disabled={!isDeleteEnabled}
                 className="h-11 flex-1"
               >
-                Permanently Delete Account
+                Konto dauerhaft löschen
               </Button>
               <Button
                 type="button"
@@ -206,17 +207,17 @@ export default function DeleteAccountPage() {
                 className="h-11 flex-1 bg-transparent"
                 asChild
               >
-                <Link href="/">Cancel</Link>
+                <Link href="/">Abbrechen</Link>
               </Button>
             </div>
           </div>
 
           <p className="mt-6 text-center text-sm text-muted-foreground">
-            Need help?{" "}
+            Brauchst du Hilfe?{" "}
             <Link href="#" className="text-primary hover:underline">
-              Contact support
+              Kontaktiere den Support
             </Link>{" "}
-            before deleting your account.
+            bevor du dein Konto löschst.
           </p>
         </div>
       </main>

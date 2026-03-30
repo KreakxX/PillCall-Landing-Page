@@ -80,7 +80,7 @@ export default function Dashboard() {
             className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-gray-700 bg-gray-50 hover:bg-gray-100 rounded-lg transition-colors"
           >
             <LogOut className="h-4 w-4" />
-            Sign Out
+            Abmelden
           </button>
         </div>
       </header>
@@ -89,27 +89,27 @@ export default function Dashboard() {
         {/* Welcome Section */}
         <div className="mb-8">
           <h2 className="text-2xl font-semibold text-gray-900">
-            Account Overview
+            Kontoübersicht
           </h2>
           <p className="text-gray-500 mt-1">
-            Manage your account settings and preferences
+            Verwalte deine Kontoeinstellungen und Präferenzen
           </p>
         </div>
 
         {/* Stats Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
           <StatCard
-            label="Subscription"
+            label="Abonnement"
             value={user.subscriptionPlan}
             icon={<CreditCard className="h-5 w-5 text-blue-500" />}
           />
           <StatCard
-            label="Calls Remaining"
+            label="Verbleibende Anrufe"
             value={user.leftCalls.toString()}
             icon={<Phone className="h-5 w-5 text-blue-500" />}
           />
           <StatCard
-            label="Medication Limit"
+            label="Medikationslimit"
             value={user.medicationLimit.toString()}
             icon={<Shield className="h-5 w-5 text-blue-500" />}
           />
@@ -119,51 +119,51 @@ export default function Dashboard() {
         <div className="bg-white border border-gray-200 rounded-xl overflow-hidden mb-6">
           <div className="px-6 py-4 border-b border-gray-100 bg-gray-50">
             <h3 className="font-semibold text-gray-900">
-              Personal Information
+              Persönliche Informationen
             </h3>
           </div>
           <div className="divide-y divide-gray-100">
             <InfoRow
               icon={<User className="h-4 w-4" />}
-              label="User ID"
+              label="Benutzer-ID"
               value={user.id}
             />
             <InfoRow
               icon={<Mail className="h-4 w-4" />}
-              label="Email"
+              label="E-Mail"
               value={user.email}
             />
             <InfoRow
               icon={<Phone className="h-4 w-4" />}
-              label="Phone"
+              label="Telefon"
               value={user.telephonenumber}
             />
             <InfoRow
               icon={<Shield className="h-4 w-4" />}
-              label="Phone Verified"
+              label="Telefon verifiziert"
               value={
                 user.telephonumber_verified_at
                   ? new Date(
                       user.telephonumber_verified_at,
                     ).toLocaleDateString()
-                  : "Not Verified"
+                  : "Nicht verifiziert"
               }
               status={user.telephonumber_verified_at ? "success" : "warning"}
             />
             <InfoRow
               icon={<User className="h-4 w-4" />}
-              label="Gender"
+              label="Geschlecht"
               value={user.gender}
             />
             <InfoRow
               icon={<Globe className="h-4 w-4" />}
-              label="Timezone"
+              label="Zeitzone"
               value={user.timezone}
             />
             <InfoRow
               icon={<Calendar className="h-4 w-4" />}
               label="Onboarding"
-              value={user.onboarding ? "Completed" : "Pending"}
+              value={user.onboarding ? "Abgeschlossen" : "Ausstehend"}
               status={user.onboarding ? "success" : "warning"}
             />
           </div>
@@ -172,19 +172,19 @@ export default function Dashboard() {
         {/* Danger Zone */}
         <div className="bg-white border border-red-200 rounded-xl overflow-hidden">
           <div className="px-6 py-4 border-b border-red-100 bg-red-50">
-            <h3 className="font-semibold text-red-700">Danger Zone</h3>
+            <h3 className="font-semibold text-red-700">Gefahrenzone</h3>
           </div>
           <div className="p-6">
             <p className="text-sm text-gray-600 mb-4">
-              Once you delete your account, there is no going back. Please be
-              certain.
+              Sobald du dein Konto löschst, gibt es kein Zurück. Bitte sei dir
+              sicher.
             </p>
             <button
               onClick={() => router.push("/account/delete")}
               className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-red-600 bg-red-50 hover:bg-red-100 border border-red-200 rounded-lg transition-colors"
             >
               <Trash2 className="h-4 w-4" />
-              Delete Account
+              Konto löschen
             </button>
           </div>
         </div>
