@@ -13,6 +13,7 @@ import {
   Trash2,
   LogOut,
 } from "lucide-react";
+import { useEffect } from "react";
 
 export default function Dashboard() {
   const { user, loading } = useUser();
@@ -24,6 +25,20 @@ export default function Dashboard() {
     });
     router.replace("/login");
   };
+
+  useEffect(() => {
+    const getJWT = async () => {
+      const res = await fetch("/api/user", {
+        method: "GET",
+        credentials: "include",
+        headers: { "Content-Type": "application/json" },
+      });
+      if (!res.ok) {
+        router.push("/login");
+      }
+    };
+    getJWT();
+  }, [router]);
 
   if (loading) {
     return (

@@ -47,7 +47,7 @@ export default function LoginPage() {
         <div className="w-full max-w-md">
           <div className="mb-8 flex flex-col items-center text-center">
             <Link href="/" className="mb-6 flex items-center gap-2">
-              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary">
+              <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-primary">
                 <img
                   src={"PillCallIcon.png"}
                   className="h-10 w-10 text-primary-foreground"
@@ -122,18 +122,6 @@ export default function LoginPage() {
               </Button>
             </div>
           </div>
-
-          <p className="mt-6 text-center text-xs text-muted-foreground">
-            Durch die Fortsetzung stimmst du unseren{" "}
-            <Link href="#" className="text-primary hover:underline">
-              Nutzungsbedingungen
-            </Link>{" "}
-            und{" "}
-            <Link href="#" className="text-primary hover:underline">
-              Datenschutzrichtlinie
-            </Link>{" "}
-            zu.
-          </p>
         </div>
       </div>
     </div>
