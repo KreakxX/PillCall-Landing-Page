@@ -66,7 +66,7 @@ export function HeroSection() {
           <div className="relative flex justify-center lg:justify-end">
             <img
               className="w-4/6 h-4/6"
-              src="/HomeScreen-portrait.png"
+              src="/HomeScreen_Update-portrait.png"
               alt="App Screenshot"
             />
           </div>

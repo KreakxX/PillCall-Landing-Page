@@ -25,21 +25,21 @@ export function AppShowcase() {
               title: "Medikamente hinzufügen",
               description:
                 "Scanne oder gib deine Rezepte manuell ein. Wir speichern alle Details.",
-              img: "/AddPAge-portrait.png",
+              img: "/Addscreen_Update-portrait.png",
             },
             {
               step: "02",
               title: "Stelle deinen Zeitplan ein",
               description:
                 "Wähle aus, wann und wie oft du jedes Medikament einnehmen musst.",
-              img: "/ReminderAdd-portrait.png",
+              img: "/Reminderpage_Update-portrait.png",
             },
             {
               step: "03",
               title: "Erhalte Erinnerungen",
               description:
                 "Erhalte zeitnahe Benachrichtigungen und verfolge deinen Fortschritt im Laufe der Zeit.",
-              img: "/Calendar-portrait.png",
+              img: "/Calendarpage_Update-portrait.png",
             },
           ].map((item, index) => (
             <div key={item.step} className="relative">
