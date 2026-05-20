@@ -12,18 +12,18 @@ function decodeJWT(token: string) {
 
 export async function GET(req: NextRequest) {
   try {
-    const jwt = req.cookies.get("token")?.value;
-    if (!jwt) {
-      return NextResponse.json({ error: "No Token" }, { status: 401 });
+    const token = req.nextUrl.searchParams.get("token");
+    if (!token) {
+      return NextResponse.json({ error: "Missing token" }, { status: 400 });
     }
 
     let userId;
     try {
-      const decodedToken = decodeJWT(jwt);
+      const decodedToken = decodeJWT(token);
       userId = decodedToken.userId;
     } catch (error) {
-      console.error("JWT decode error:", error);
-      return NextResponse.json({ error: "Invalid token" }, { status: 401 });
+      console.error("Invalid JWT token:", error);
+      return NextResponse.json({ error: "Invalid token" }, { status: 400 });
     }
 
     const userResponse = await fetch(
@@ -31,7 +31,7 @@ export async function GET(req: NextRequest) {
       {
         method: "GET",
         headers: {
-          Authorization: `Bearer ${jwt}`,
+          Authorization: `Bearer ${token}`,
           "Content-Type": "application/json",
         },
       },
@@ -47,9 +47,21 @@ export async function GET(req: NextRequest) {
     }
 
     const userData = await userResponse.json();
-    return NextResponse.json(userData);
+    const res = NextResponse.json({ user: userData });
+    res.cookies.set("token", token, {
+      httpOnly: true,
+      path: "/",
+      maxAge: 3600,
+    });
+    return res;
   } catch (error) {
-    console.error("User route error:", error);
-    return NextResponse.json({ error: "Internal Server Error" }, { status: 500 });
+    console.error("Google login callback error:", error);
+    return NextResponse.json(
+      {
+        error: "Internal Server Error",
+        details: error instanceof Error ? error.message : "Unknown error",
+      },
+      { status: 500 },
+    );
   }
 }

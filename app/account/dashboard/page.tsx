@@ -16,7 +16,7 @@ import {
 import { useEffect } from "react";
 
 export default function Dashboard() {
-  const { user, loading } = useUser();
+  const { user, setUser, loading } = useUser();
   const router = useRouter();
 
   const signout = async () => {
@@ -33,12 +33,19 @@ export default function Dashboard() {
         credentials: "include",
         headers: { "Content-Type": "application/json" },
       });
+
       if (!res.ok) {
         router.push("/login");
+        return;
+      }
+
+      const userData = await res.json();
+      if (userData) {
+        setUser(userData);
       }
     };
     getJWT();
-  }, [router]);
+  }, [router, setUser]);
 
   if (loading) {
     return (
